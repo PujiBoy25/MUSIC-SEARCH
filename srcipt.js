@@ -94,3 +94,12 @@ resultsContainer.addEventListener('click', async (e) => {
     detailModal.show();
   }
 });
+
+// Menjalankan pencarian otomatis saat halaman pertama kali dimuat
+window.addEventListener('DOMContentLoaded', () => {
+  const defaultQuery = "When I Was Your Man";
+  queryInput.value = defaultQuery; // Isi input pencarian
+  searchForm.dispatchEvent(new Event('submit')); // Jalankan pencarian otomatis
+  queryInput.value = ""; // Kosongkan input setelah submit
+});
+
